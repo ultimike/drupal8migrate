@@ -1,0 +1,7 @@
+id: de6
+label: DrupaEasy 6 content
+description: Podcast posts
+source_type: Drupal 6.
+shared_configuration:
+  source:
+    key: legacy

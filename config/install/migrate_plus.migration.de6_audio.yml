@@ -1,0 +1,47 @@
+id: de6_audio
+label: Podcasts
+migration_tags:
+  - Drupal 6
+deriver: Drupal\node\Plugin\migrate\D6NodeDeriver
+migration_group: de6
+source:
+  plugin: d6_node
+  node_type: audio
+process:
+#  nid and vid commented out will allow them to autoincrement. Safe as long
+#    as nothing else is referencing them.
+#  nid: nid
+#  vid: vid
+  type:
+    plugin: default_value
+    default_value: podcast
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: "und"
+  title: title
+  uid:
+    plugin: default_value
+    default_value: 1
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+#  'field_podcast_body/format':
+#    plugin: default_value
+#    default_value: markdown
+#  'field_podcast_body/value': body
+  body/format:
+    plugin: default_value
+    default_value: markdown
+  body/value: body
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  field_audio_urls:
+    plugin: d6_cck_link
+    source: field_embed
+destination:
+  plugin: entity:node
+migration_dependencies: {}
