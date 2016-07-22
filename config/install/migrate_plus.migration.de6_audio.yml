@@ -28,10 +28,6 @@ process:
   changed: changed
   promote: promote
   sticky: sticky
-#  'field_podcast_body/format':
-#    plugin: default_value
-#    default_value: markdown
-#  'field_podcast_body/value': body
   body/format:
     plugin: default_value
     default_value: markdown
